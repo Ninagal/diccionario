@@ -8,18 +8,12 @@ export default function Dict() {
     const [searchWord, setSearchWord] = useState("");
     const [photos, setPhotos] = useState(null);
 
-    function handleDictionResponse(response) {
-      setResults(response.data[0]);
-    }
     function handlePexelsResponse(response) {
       setPhotos(response.data.photos);
     }
 
     function search() {
-      // documentation: https://dictionaryapi.dev/e
-      let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${keyword}`;
-      axios.get(apiUrl).then(handleDictionResponse);
-  
+ 
       let pexelsApiKey =
         "563492ad6f91700001000001fdd29f0808df42bd90c33f42e128fa89";
       let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=9`;
