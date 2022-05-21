@@ -4,8 +4,7 @@ import "./Photos.css";
 export default function Photos(props) {
   if (props.photos) {
     return (
-      <section className="Photos">
-        <div className="row">
+      <div className="Photos">
           {props.photos.map(function (photo, index) {
             return (
               <div className="col-4" key={index}>
@@ -16,11 +15,10 @@ export default function Photos(props) {
                     alt={photo.src.photographer}
                   />
                 </a>
-              </div>
+                </div>
             );
           })}
         </div>
-      </section>
     );
   } else {
     return null;
