@@ -7,7 +7,6 @@ export default function Dict() {
     const [data, setData] = useState("");
     const [searchWord, setSearchWord] = useState("");
     const [photos, setPhotos] = useState(null);
-    const [results, setResults] = useState(null);
 
     function handleDictionResponse(response) {
       setResults(response.data[0]);
